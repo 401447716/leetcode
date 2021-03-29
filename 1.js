@@ -1,4 +1,33 @@
-## 1. 两数之和
+'use strict'
+function fn (arr, target) {
+  let map = new Map();
+  for (let i in arr) {
+    map.set(arr[i], i);
+  }
+  let t = 0
+  for (let i in arr) {
+    if (t = map.get(target - arr[i])) {
+      if (+t !== +i) {
+        return [+i, +t]
+      }
+    }
+  }
+}
+
+var arr1 = [2,7,11,15];
+var target1 = 9;
+console.log(fn(arr1, target1));
+
+var arr2 = [3, 2, 4];
+var target2 = 6;
+console.log(fn(arr2, target2));
+
+var arr3 = [3, 3];
+var target3 = 6;
+console.log(fn(arr3, target3));
+
+/*
+1. 两数之和
 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。
 
 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
@@ -22,3 +51,4 @@
 -109 <= nums[i] <= 109
 -109 <= target <= 109
 只会存在一个有效答案
+ */

@@ -1,4 +1,24 @@
-## 3. 无重复字符的最长子串
+'use strict'
+function fn (s) {
+  let max = 0;
+  let t = 0;
+  let arr = [];
+  for (let i = 0; i < s.length; i++) {
+    while (arr.includes(s[i])) {
+      arr.shift()
+    }
+    arr.push(s[i])
+    if (max < arr.length) {
+      max = arr.length
+    }
+  }
+  return max
+}
+
+console.log(fn("pwwkew"))
+
+/*
+3. 无重复字符的最长子串
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
 示例 1:
@@ -24,3 +44,4 @@
 提示：
 0 <= s.length <= 5 * 104
 s 由英文字母、数字、符号和空格组成
+*/
